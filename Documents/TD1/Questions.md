@@ -30,8 +30,38 @@ Cette caractéristique a plusieurs conséquences importantes pour la navigation 
 
 - Absence de contexte persistant : Le serveur ne garde pas automatiquement trace des actions précédentes de l'utilisateur ou de son état de connexion entre les requêtes.
 - Nécessité de mécanismes supplémentaires : Pour maintenir une session utilisateur ou conserver des informations d'une page à l'autre, des techniques additionnelles sont nécessaires, comme l'utilisation de cookies ou de sessions côté serveur.
-- Simplification du serveur : Le serveur n'a pas besoin de maintenir des informations d'état pour chaque client, ce qui simplifie sa conception et améliore sa scalabilité.
+- Simplification du serveur : Le serveur n'a pas besoin de maintenir des informations d'état pour chaque client, ce qui simplifie sa conception.
 - Performances améliorées : Chaque requête étant indépendante, le serveur peut traiter un grand nombre de requêtes simultanées sans se soucier de leur contexte.
 - Défis pour les applications Web complexes : Les développeurs doivent implémenter des mécanismes supplémentaires pour gérer l'état de l'utilisateur et maintenir la cohérence des données entre les pages.
 - Sécurité : L'absence d'état peut rendre plus difficile le suivi des sessions utilisateur, nécessitant des mesures de sécurité supplémentaires pour prévenir les attaques.
 - Rechargement des données : À chaque nouvelle requête, toutes les informations nécessaires doivent être envoyées, ce qui peut augmenter le volume de données transférées.
+
+## 5 
+Une URL peut être décomposée en plusieurs parties, chacune ayant un rôle spécifique. Voici les principales composantes d'une URL et leur fonction :
+
+1. Protocole
+Exemple : `https://`
+Rôle : Spécifie le protocole de communication utilisé pour accéder à la ressource. HTTPS indique une connexion sécurisée.
+
+2. Nom de domaine
+Exemple : `www.example.com`
+Rôle : Identifie le serveur hébergeant la ressource. C'est l'adresse unique du site web.
+
+3. Chemin
+Exemple : `/blog/article`
+Rôle : Spécifie l'emplacement de la ressource sur le serveur. Représente souvent la structure des répertoires.
+
+4. Paramètres de requête
+Exemple : `?id=123&category=tech`
+Rôle : Fournit des données supplémentaires à la ressource. Commence par "?" et utilise "&" pour séparer plusieurs paramètres.
+
+5. Fragment
+Exemple : `#section2`
+Rôle : Indique une partie spécifique de la ressource. Souvent utilisé pour naviguer vers une section précise d'une page.
+
+Une URL complète pourrait ressembler à ceci :
+`https://www.example.com:443/blog/article?id=123&category=tech#section2`
+
+Cette structure permet une identification et une localisation précises des ressources sur le Web.
+
+## 6 
