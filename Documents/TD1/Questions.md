@@ -124,7 +124,7 @@ Résultat :
 </html>
 ```
 
-Commentaire : Cette requête GET récupère le contenu de la page d'accueil du site dev.local. Le serveur a répondu avec un code 200 OK et a renvoyé le contenu HTML de la page.
+Cette requête GET récupère le contenu de la page d'accueil du site dev.local. Le serveur a répondu avec un code 200 OK et a renvoyé le contenu HTML de la page.
 
 2. Afficher l'entête de la réponse pour cette URL
 
@@ -141,7 +141,7 @@ Server: Apache/2.4.41 (Ubuntu)
 Content-Type: text/html; charset=UTF-8
 ```
 
-Commentaire : L'option -I demande à curl d'afficher uniquement les en-têtes de la réponse. Nous pouvons voir que le serveur a répondu avec un code 200 OK, indiquant que la requête a réussi. Le serveur utilise Apache et le contenu est de type HTML.
+L'option -I demande à curl d'afficher uniquement les en-têtes de la réponse. Nous pouvons voir que le serveur a répondu avec un code 200 OK, indiquant que la requête a réussi. Le serveur utilise Apache et le contenu est de type HTML.
 
 3. Effectuer une requête GET vers l'url http://dev.local/notExisting
 
@@ -164,7 +164,7 @@ Résultat :
 </html>
 ```
 
-Commentaire : Cette requête tente d'accéder à une page qui n'existe pas. Le serveur répond avec une page d'erreur 404, indiquant que la ressource demandée n'a pas été trouvée.
+Cette requête tente d'accéder à une page qui n'existe pas. Le serveur répond avec une page d'erreur 404, indiquant que la ressource demandée n'a pas été trouvée.
 
 4. Afficher l'entête de la réponse pour cette URL
 
@@ -181,7 +181,7 @@ Server: Apache/2.4.41 (Ubuntu)
 Content-Type: text/html; charset=UTF-8
 ```
 
-Commentaire : L'en-tête de la réponse confirme le code d'état 404 Not Found. Cela indique que le serveur n'a pas trouvé la ressource demandée.
+L'en-tête de la réponse confirme le code d'état 404 Not Found. Cela indique que le serveur n'a pas trouvé la ressource demandée.
 
 5. Déposer un fichier localement dans le dossier download depuis la racine de votre virtualhost dev.local
 
@@ -190,7 +190,7 @@ Commande :
 echo "Test file content" > /var/www/dev.local/download/testfile.txt
 ```
 
-Commentaire : Cette commande crée un fichier texte nommé "testfile.txt" dans le dossier "download" du virtualhost.
+Cette commande crée un fichier texte nommé "testfile.txt" dans le dossier "download" du virtualhost.
 
 6. Téléchargez-le depuis curl
 
@@ -206,6 +206,20 @@ Résultat :
 100    18  100    18    0     0   1800      0 --:--:-- --:--:-- --:--:--  1800
 ```
 
-Commentaire : L'option -O demande à curl de sauvegarder le fichier téléchargé avec son nom original. Le fichier "testfile.txt" a été téléchargé avec succès. La sortie montre les statistiques de téléchargement, indiquant que 18 octets ont été transférés.
+L'option -O demande à curl de sauvegarder le fichier téléchargé avec son nom original. Le fichier "testfile.txt" a été téléchargé avec succès. La sortie montre les statistiques de téléchargement, indiquant que 18 octets ont été transférés.
 
 ## 10
+
+| En-tête | Rôle | Exemple |
+|---------|------|---------|
+| Host | Spécifie le nom de domaine du serveur | `Host: www.example.com` |
+| User-Agent | Identifie le client (navigateur, robot, etc.) | `User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36` |
+| Accept | Indique les types de contenu acceptés par le client | `Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8` |
+| Accept-Language | Spécifie les langues préférées du client | `Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7` |
+| Accept-Encoding | Indique les encodages de contenu acceptés | `Accept-Encoding: gzip, deflate, br` |
+| Referer | Indique l'URL de la page précédente | `Referer: https://www.google.com/search?q=example` |
+| Cookie | Envoie les cookies stockés pour le domaine | `Cookie: session_id=abc123; user_pref=dark_mode` |
+| Authorization | Fournit les informations d'authentification | `Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=` |
+| Content-Type | Spécifie le type de contenu du corps de la requête | `Content-Type: application/json` |
+| Content-Length | Indique la taille du corps de la requête en octets | `Content-Length: 348` |
+
