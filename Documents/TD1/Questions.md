@@ -64,4 +64,39 @@ Une URL complète pourrait ressembler à ceci :
 
 Cette structure permet une identification et une localisation précises des ressources sur le Web.
 
-## 6 
+## 6
+Les codes de statut HTTP sont regroupés en 5 grandes familles. Voici un résumé de chaque famille avec un exemple pour chacune :
+
+1. 1xx - Réponses informatives
+   Exemple : 100 Continue
+   Signification : Le serveur a reçu les en-têtes de la requête et le client peut poursuivre avec l'envoi du corps de la requête.
+
+2. 2xx - Réponses de succès  
+   Exemple : 200 OK
+   Signification : La requête a réussi. C'est la réponse standard pour les requêtes HTTP réussies.
+
+3. 3xx - Redirections
+   Exemple : 301 Moved Permanently  
+   Signification : L'URL demandée a été déplacée de façon permanente vers une nouvelle URL.
+
+4. 4xx - Erreurs du client
+   Exemple : 404 Not Found
+   Signification : Le serveur n'a pas trouvé la ressource demandée. C'est une erreur très courante sur le web.
+
+5. 5xx - Erreurs du serveur
+   Exemple : 500 Internal Server Error
+   Signification : Le serveur a rencontré une situation qu'il ne sait pas traiter.
+
+## 7 
+La négociation de contenu HTTP est un mécanisme qui permet au client et au serveur de s'accorder sur le format le plus approprié pour représenter une ressource. 
+
+### Points clés :
+
+1. **Principe** : Le client envoie une requête avec ses préférences (type de média, langue, encodage) via des en-têtes HTTP. Le serveur examine ces préférences et choisit la représentation la plus adaptée.
+
+2. **Types de négociation** :
+   - **Négociation sur le type de média** : Permet au client de demander des données dans différents formats (par exemple, JSON ou XML).
+   - **Négociation de langue** : Permet au client de spécifier une langue préférée pour le contenu.
+   - **Négociation d'encodage** : Permet au client de demander des données compressées ou dans un format spécifique.
+
+La négociation de contenu facilite une communication plus efficace entre le client et le serveur, en fournissant le contenu dans le format le plus approprié selon les capacités et préférences du client.
