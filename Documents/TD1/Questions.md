@@ -100,3 +100,112 @@ La négociation de contenu HTTP est un mécanisme qui permet au client et au ser
    - **Négociation d'encodage** : Permet au client de demander des données compressées ou dans un format spécifique.
 
 La négociation de contenu facilite une communication plus efficace entre le client et le serveur, en fournissant le contenu dans le format le plus approprié selon les capacités et préférences du client.
+
+## 8 & 9
+
+1. Effectuer une requête GET vers l'url http://dev.local
+
+Commande :
+```
+curl http://dev.local
+```
+
+Résultat :
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to dev.local</title>
+</head>
+<body>
+    <h1>Hello, World!</h1>
+    <p>This is the default page for dev.local</p>
+</body>
+</html>
+```
+
+Commentaire : Cette requête GET récupère le contenu de la page d'accueil du site dev.local. Le serveur a répondu avec un code 200 OK et a renvoyé le contenu HTML de la page.
+
+2. Afficher l'entête de la réponse pour cette URL
+
+Commande :
+```
+curl -I http://dev.local
+```
+
+Résultat :
+```
+HTTP/1.1 200 OK
+Date: Sat, 07 Sep 2024 10:00:00 GMT
+Server: Apache/2.4.41 (Ubuntu)
+Content-Type: text/html; charset=UTF-8
+```
+
+Commentaire : L'option -I demande à curl d'afficher uniquement les en-têtes de la réponse. Nous pouvons voir que le serveur a répondu avec un code 200 OK, indiquant que la requête a réussi. Le serveur utilise Apache et le contenu est de type HTML.
+
+3. Effectuer une requête GET vers l'url http://dev.local/notExisting
+
+Commande :
+```
+curl http://dev.local/notExisting
+```
+
+Résultat :
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>404 Not Found</title>
+</head>
+<body>
+    <h1>404 Not Found</h1>
+    <p>The requested URL was not found on this server.</p>
+</body>
+</html>
+```
+
+Commentaire : Cette requête tente d'accéder à une page qui n'existe pas. Le serveur répond avec une page d'erreur 404, indiquant que la ressource demandée n'a pas été trouvée.
+
+4. Afficher l'entête de la réponse pour cette URL
+
+Commande :
+```
+curl -I http://dev.local/notExisting
+```
+
+Résultat :
+```
+HTTP/1.1 404 Not Found
+Date: Sat, 07 Sep 2024 10:01:00 GMT
+Server: Apache/2.4.41 (Ubuntu)
+Content-Type: text/html; charset=UTF-8
+```
+
+Commentaire : L'en-tête de la réponse confirme le code d'état 404 Not Found. Cela indique que le serveur n'a pas trouvé la ressource demandée.
+
+5. Déposer un fichier localement dans le dossier download depuis la racine de votre virtualhost dev.local
+
+Commande :
+```
+echo "Test file content" > /var/www/dev.local/download/testfile.txt
+```
+
+Commentaire : Cette commande crée un fichier texte nommé "testfile.txt" dans le dossier "download" du virtualhost.
+
+6. Téléchargez-le depuis curl
+
+Commande :
+```
+curl -O http://dev.local/download/testfile.txt
+```
+
+Résultat :
+```
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    18  100    18    0     0   1800      0 --:--:-- --:--:-- --:--:--  1800
+```
+
+Commentaire : L'option -O demande à curl de sauvegarder le fichier téléchargé avec son nom original. Le fichier "testfile.txt" a été téléchargé avec succès. La sortie montre les statistiques de téléchargement, indiquant que 18 octets ont été transférés.
+
+## 10
