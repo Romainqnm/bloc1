@@ -4,6 +4,7 @@ body {
 }
 h1 {
     color: #333;
+    border-radius: 4px;
 }
 ul {
     list-style-type: circle;
@@ -12,9 +13,10 @@ ul {
 p {
     font-size: 1.1em;
     background-color: #e2e2e2;
+    border-radius: 4px;
 }
 .liste {
     background-color: #e2e2e2;
     padding: 5px;
-    border-radius: 3px;
+    border-radius: 4px;
 }
