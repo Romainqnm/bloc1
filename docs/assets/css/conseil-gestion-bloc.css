@@ -7,7 +7,7 @@
 
 .imagedefond { 
   
-    background-image: url("df-min.jpg");
+    
     background-color: grey
 }
 
@@ -18,7 +18,10 @@ body {
     align-items: center;
     min-height: 100vh;
     padding: 20px;
-}
+    background-image: url("../images/df-min.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}  
 
 .main-container {
     width: 100%;
