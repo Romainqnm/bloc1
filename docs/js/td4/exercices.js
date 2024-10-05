@@ -1,9 +1,4 @@
-const bt = (id)=>document.getElementById("id");
-
-if(bt("bgcolor")){
-    bt("bgcolor").addEventListener("click", ()=> ){
-        document.body.backgroundColor = "darkcyan"
-    };
-
-
-}
+document.getElementById('changeColorBtn').addEventListener('click', function () {
+    document.body.style.backgroundColor = document.body.style.backgroundColor === 'purple' ? 'white' : 'purple';
+  });
+  
