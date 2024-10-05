@@ -21,4 +21,7 @@ document.getElementById('changeColorBtn').addEventListener('click', function () 
       document.getElementById('result').textContent = 'Veuillez entrer deux nombres valides.';
     }
   });
+document.getElementById('imageSelect').addEventListener('change', function () {
+  document.getElementById('displayImage').src = this.value;
+  });
   
