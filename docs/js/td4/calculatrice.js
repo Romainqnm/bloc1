@@ -11,3 +11,18 @@ let currentOperation = '';
 let currentValue = '';
 let previousValue = '';
 let operator = '';
+
+function generateCalculatorInterface() {
+    buttons.forEach(row => {
+        const rowDiv = document.createElement('div');
+        rowDiv.className = 'row';
+        row.forEach(buttonText => {
+            const button = document.createElement('button');
+            button.className = 'button';
+            button.textContent = buttonText;
+            button.addEventListener('click', () => handleButtonClick(buttonText));
+            rowDiv.appendChild(button);
+        });
+        calculator.appendChild(rowDiv);
+    });
+}
