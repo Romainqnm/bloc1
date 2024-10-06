@@ -27,3 +27,11 @@ decreaseBtn.addEventListener('click', () => {
     fontSizeInput.value = Math.max(10, parseInt(fontSizeInput.value) - 2);
     updateTextStyle();
 });
+
+boldCheckbox.addEventListener('change', updateTextStyle);
+italicCheckbox.addEventListener('change', updateTextStyle);
+underlineCheckbox.addEventListener('change', updateTextStyle);
+strikeCheckbox.addEventListener('change', updateTextStyle);
+colorPicker.addEventListener('input', updateTextStyle);
+fontSizeInput.addEventListener('input', updateTextStyle);
+fontSelect.addEventListener('change', updateTextStyle);
