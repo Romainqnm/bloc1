@@ -49,3 +49,11 @@ document.getElementById('toggleCheckbox').addEventListener('change', function ()
   const element = document.getElementById('toggleElement');
   element.style.display = this.checked ? 'block' : 'none';
 });
+
+document.getElementById('contactForm').addEventListener('submit', function (event) {
+  event.preventDefault();
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const message = document.getElementById('message').value;
+  console.log(`Nom: ${name}, Email: ${email}, Message: ${message}`);
+});
