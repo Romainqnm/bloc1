@@ -54,3 +54,30 @@ function handleOperator(op) {
     currentOperation = `${previousValue} ${operator}`;
     updateDisplay(currentOperation);
 }
+
+function handleEqual() {
+    let result = 0;
+    const num1 = parseFloat(previousValue);
+    const num2 = parseFloat(currentValue);
+
+    switch (operator) {
+        case '+':
+            result = num1 + num2;
+            break;
+        case '−':
+            result = num1 - num2;
+            break;
+        case '×':
+            result = num1 * num2;
+            break;
+        case '÷':
+            result = num1 / num2;
+            break;
+        default:
+            return;
+    }
+
+    updateDisplay(result);
+    currentValue = result.toString();
+    currentOperation = `${previousValue} ${operator} ${currentValue}`;
+    operator = '';
