@@ -40,3 +40,17 @@ function handleButtonClick(buttonText) {
         handleComma();
     }
 }
+
+function handleNumber(number) {
+    currentValue += number;
+    updateDisplay(currentValue);
+}
+
+function handleOperator(op) {
+    if (currentValue === '') return;
+    previousValue = currentValue;
+    currentValue = '';
+    operator = op;
+    currentOperation = `${previousValue} ${operator}`;
+    updateDisplay(currentOperation);
+}
