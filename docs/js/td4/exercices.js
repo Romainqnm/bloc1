@@ -44,3 +44,8 @@ document.getElementById('deleteBtn').addEventListener('click', function () {
     document.getElementById('deleteElement').remove();
   }
 });
+
+document.getElementById('toggleCheckbox').addEventListener('change', function () {
+  const element = document.getElementById('toggleElement');
+  element.style.display = this.checked ? 'block' : 'none';
+});
