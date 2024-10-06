@@ -38,3 +38,9 @@ function updateClock() {
 setInterval(updateClock, 1000);
 updateClock();
 
+document.getElementById('deleteBtn').addEventListener('click', function () {
+  const confirmDelete = confirm('Voulez-vous vraiment supprimer cet élément ?');
+  if (confirmDelete) {
+    document.getElementById('deleteElement').remove();
+  }
+});
