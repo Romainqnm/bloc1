@@ -17,3 +17,13 @@ function updateTextStyle() {
     textElement.style.fontSize = fontSizeInput.value + 'px';
     textElement.style.fontFamily = fontSelect.value;
 }
+
+increaseBtn.addEventListener('click', () => {
+    fontSizeInput.value = parseInt(fontSizeInput.value) + 2;
+    updateTextStyle();
+});
+
+decreaseBtn.addEventListener('click', () => {
+    fontSizeInput.value = Math.max(10, parseInt(fontSizeInput.value) - 2);
+    updateTextStyle();
+});
