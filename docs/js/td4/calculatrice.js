@@ -26,3 +26,17 @@ function generateCalculatorInterface() {
         calculator.appendChild(rowDiv);
     });
 }
+
+function handleButtonClick(buttonText) {
+    if (/\d/.test(buttonText)) {
+        handleNumber(buttonText);
+    } else if (['+', '−', '×', '÷'].includes(buttonText)) {
+        handleOperator(buttonText);
+    } else if (buttonText === '=') {
+        handleEqual();
+    } else if (buttonText === '±') {
+        handleToggleSign();
+    } else if (buttonText === ',') {
+        handleComma();
+    }
+}
