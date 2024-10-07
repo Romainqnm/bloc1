@@ -57,3 +57,5 @@ document.getElementById('contactForm').addEventListener('submit', function (even
   const message = document.getElementById('message').value;
   console.log(`Nom: ${name}, Email: ${email}, Message: ${message}`);
 });
+
+"bt && bt.add = vérifier si bouton existe, sinon ne pas éxécuter le bout de code"
