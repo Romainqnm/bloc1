@@ -6,32 +6,80 @@
     <title>BLOC 1 - SLAM</title>
     <link rel="stylesheet" href="assets/css/td2/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>BLOC 1 - SLAM</h1>
-        </header>
-        <section>
-            <h2>Documents</h2>
-            <div class="document-list">
-                <ul>
-                    <li><a href="pages/td1/Questions.md">TD1</a></li>
-                </ul>
-                <ul>
-                    <li><a href="pages/td2/mentions-legales-1.html">Mentions Légales V1</a></li>
-                    <li><a href="pages/td2/mentions-legales-2.html">Mentions Légales V2</a></li>
-                    <li><a href="pages/td2/mentions-legales-3.html">Mentions Légales V3</a></li>
-                    <li><a href="pages/td2/pate-a-crepe.html">Pâte à Crèpes</a></li>
-                    <li><a href="pages/td2/status-juridiques.html">Status Juridiques</a></li>
-                </ul>
-                <ul>
-                    <li><a href="pages/td3/conseil-gestion-bloc.html">Conseil Gestion Bloc</a></li>
-                    <li><a href="pages/td3/about-us.html">About Us</a></li>
-                    <li><a href="pages/td3/blog.html">Blog</a></li>
-                </ul>
-            </div>
-        </section>
+    <h1>BLOC 1 - SLAM</h1>
+    
+    <h2>Documents</h2>
+
+    <div class="td-container">
+        <h3>TD1</h3>
+        <ul>
+            <li><a href="pages/td1/Questions.md">Questions - TD1</a></li>
+        </ul>
     </div>
+
+    <div class="td-container">
+        <h3>TD2</h3>
+        <ul>
+            <li><a href="pages/td2/mentions-legales-1.html">Mentions Légales V1</a></li>
+            <li><a href="pages/td2/mentions-legales-2.html">Mentions Légales V2</a></li>
+            <li><a href="pages/td2/mentions-legales-3.html">Mentions Légales V3</a></li>
+            <li><a href="pages/td2/pate-a-crepe.html">Pâte à Crèpes</a></li>
+            <li><a href="pages/td2/status-juridiques.html">Status Juridiques</a></li>
+        </ul>
+    </div>
+
+    <div class="td-container">
+        <h3>TD3</h3>
+        <ul>
+            <li><a href="pages/td3/conseil-gestion-bloc.html">Conseil Gestion Bloc</a></li>
+            <li><a href="pages/td3/about-us.html">About Us</a></li>
+            <li><a href="pages/td3/blog.html">Blog</a></li>
+        </ul>
+    </div>
+
+    <div class="td-container">
+        <h3>TD4</h3>
+        <ul>
+            <li><a href="pages/td4/acces-exercices-index.html">Exercices - JavaScript</a></li>
+            <li><a href="pages/td4/styles-illustration.html">Styles Illustration</a></li>
+            <li><a href="pages/td4/calculatrice.html">Calculatrice</a></li>
+            <li><a href="pages/td4/to-do-list.html">Todo Liste</a></li>
+            <li><a href="pages/td4/mentions-legales-4.html">Mentions Légales V4</a></li>
+        </ul>
+    </div>
+
+    <div class="ball" id="ball"></div>
+
+    <script>
+        const ball = document.getElementById('ball');
+        let xPos = 0;
+        let yPos = 0;
+        let xSpeed = 2;
+        let ySpeed = 2;
+        const width = window.innerWidth - 50;
+        const height = window.innerHeight - 50;
+
+        function moveBall() {
+            xPos += xSpeed;
+            yPos += ySpeed;
+
+            if (xPos >= width || xPos <= 0) {
+                xSpeed = -xSpeed;
+            }
+            if (yPos >= height || yPos <= 0) {
+                ySpeed = -ySpeed;
+            }
+
+            ball.style.left = xPos + 'px';
+            ball.style.top = yPos + 'px';
+
+            requestAnimationFrame(moveBall);
+        }
+
+        moveBall();
+    </script>
 </body>
 </html>
