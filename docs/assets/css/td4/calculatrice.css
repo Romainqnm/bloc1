@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#calculator {
+    width: 300px;
+    margin: 100px auto;
+}
+
+#display {
+    background-color: #f3f3f3;
+    border: 1px solid #ccc;
+    font-size: 2em;
+    padding: 10px;
+    text-align: right;
+    margin-bottom: 10px;
+    height: 60px;
+}
+
+.button {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5em;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.equal {
+    background-color: #007bff;
+    color: white;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
