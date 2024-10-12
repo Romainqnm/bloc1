@@ -25,3 +25,11 @@ p {
     padding-bottom: 10px;
     margin-bottom: 15px;
 }
+
+#main-container {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-top: 20px;
+    min-height: 200px; /* Assure une taille minimale */
+    background-color: #f9f9f9; /* Couleur de fond pour distinguer */
+}
