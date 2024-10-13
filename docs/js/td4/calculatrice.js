@@ -77,25 +77,26 @@ function handleEqual() {
             return;
     }
 
-updateDisplay(result);
-currentValue = result.toString();
-currentOperation = `${previousValue} ${operator} ${currentValue}`;
-operator = '';
+    updateDisplay(result);
+    currentValue = result.toString();
+    currentOperation = `${previousValue} ${operator} ${currentValue}`;
+    operator = '';
+}
 
 function handleToggleSign() {
     currentValue = currentValue.startsWith('-') ? currentValue.slice(1) : '-' + currentValue;
     updateDisplay(currentValue);
 }
-    
+
 function handleComma() {
     if (!currentValue.includes('.')) {
         currentValue += '.';
         updateDisplay(currentValue);
     }
 }
-    
+
 function updateDisplay(value) {
     display.textContent = value;
 }
-    
+
 generateCalculatorInterface();
