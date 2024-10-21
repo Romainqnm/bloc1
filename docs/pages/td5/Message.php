@@ -6,6 +6,11 @@
     <title>Message PHP</title>
 </head>
 <body>
-   
+    <h1>Afficher un message</h1>
+    
+    <?php
+    $message = isset($_GET['message']) ? $_GET['message'] : "Message par défaut";
+    echo "<p>$message</p>";
+    ?>
 </body>
 </html>
