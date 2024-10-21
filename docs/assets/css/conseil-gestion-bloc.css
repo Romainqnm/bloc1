@@ -103,3 +103,20 @@ body {
 .footer {
     font-size: 12px;
 }
+
+.services {
+    display: flex;
+    flex-direction: column; /* Met les services les uns au-dessus des autres */
+    gap: 20px; /* Espace entre chaque service */
+    padding: 20px;
+}
+
+.service {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    width: 80%; /* Ajuste cette valeur si besoin */
+    margin: 0 auto; /* Centrer chaque service */
+}
