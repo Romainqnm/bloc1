@@ -13,7 +13,21 @@
 </head>
 <body>
 
+<h1>Testeur de Polices</h1>
 
+<form method="GET" action="font-tester.php">
+    <input type="hidden" name="message" value="<?php echo htmlspecialchars($message); ?>">
+    <input type="hidden" name="color" value="<?php echo htmlspecialchars($color); ?>">
+    <input type="hidden" name="size" value="<?php echo $size + 5; ?>">
+    <button type="submit">Augmenter Taille (+5)</button>
+</form>
+
+<form method="GET" action="font-tester.php">
+    <input type="hidden" name="message" value="<?php echo htmlspecialchars($message); ?>">
+    <input type="hidden" name="color" value="<?php echo htmlspecialchars($color); ?>">
+    <input type="hidden" name="size" value="<?php echo max($size - 5, 1); ?>">
+    <button type="submit">Diminuer Taille (-5)</button>
+</form>
 
 </body>
 </html>
