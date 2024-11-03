@@ -15,6 +15,24 @@
 
 <h1>Testeur de Polices</h1>
 
+<?php
+$message = isset($_GET['message']) ? $_GET['message'] : "Aucun message fourni.";
+$size = isset($_GET['size']) ? (int)$_GET['size'] : 12;
+$color = isset($_GET['color']) ? $_GET['color'] : "black";
+
+if ($size <= 0) {
+    $size = 12;
+}
+
+echo "<div class='message-container' style='font-size: {$size}px; color: {$color};'>{$message}</div>";
+?>
+
+<a href="?message=Salut&size=15&color=red">Message Rouge, Taille 15</a><br>
+<a href="?message=Bonjour&size=30&color=green">Message Vert, Taille 30</a><br>
+<a href="?message=Hello&size=50&color=blue">Message Bleu, Taille 50</a><br>
+
+<hr>
+
 <form method="GET" action="font-tester.php">
     <label for="message">Message :</label>
     <input type="text" name="message" id="message" value="<?php echo htmlspecialchars($message); ?>"><br>
