@@ -56,6 +56,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <input type="submit" value="Générer le tableau">
 </form>
 
+<div class="table-container">
+    <?php 
+
+    echo $tableHTML; 
+    ?>
+</div>
+
+<label for="tableCode">Code HTML du tableau :</label>
+<textarea id="tableCode" rows="10" cols="70" readonly><?php echo htmlspecialchars($tableHTML); ?></textarea>
 
 </body>
 </html>
