@@ -15,6 +15,25 @@
 
 <h1>Testeur de Polices avec Formulaire</h1>
 
+<?php
+$message = "Aucun message fourni";
+$size = 12;
+$color = "black";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $message = !empty($_POST['message']) ? $_POST['message'] : $message;
+    $size = !empty($_POST['size']) ? (int)$_POST['size'] : $size;
+    $color = !empty($_POST['color']) ? $_POST['color'] : $color;
+
+    if ($size <= 0) {
+        $size = 12;
+    }
+}
+
+echo "<div class='message-container' style='font-size: {$size}px; color: {$color};'>{$message}</div>";
+?>
+
 <form method="POST" action="font-tester-form.php">
     <label for="message">Message :</label><br>
     <textarea name="message" id="message" rows="4" cols="50" placeholder="Entrez votre message ici..."><?php echo htmlspecialchars($message); ?></textarea><br>
