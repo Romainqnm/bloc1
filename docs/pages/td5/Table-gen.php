@@ -45,5 +45,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $tableHTML .= "</table>\n";
 }
 ?>
+
+<form method="POST" action="table-gen.php">
+    <label for="rows">Nombre de lignes :</label>
+    <input type="number" name="rows" id="rows" min="1" max="100" value="1" required><br>
+
+    <label for="cols">Nombre de colonnes :</label>
+    <input type="number" name="cols" id="cols" min="1" max="100" value="1" required><br>
+
+    <input type="submit" value="Générer le tableau">
+</form>
+
+
 </body>
 </html>
