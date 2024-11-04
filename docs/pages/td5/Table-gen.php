@@ -20,6 +20,30 @@
 
 <h1>Générateur de Tableau HTML</h1>
 
+<?php
 
+$tableHTML = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $rows = isset($_POST['rows']) ? (int)$_POST['rows'] : 1;
+    $cols = isset($_POST['cols']) ? (int)$_POST['cols'] : 1;
+
+
+    $rows = min($rows, 100);
+    $cols = min($cols, 100);
+
+
+    $tableHTML .= "<table>\n";
+    for ($i = 0; $i < $rows; $i++) {
+        $tableHTML .= "<tr>\n";
+        for ($j = 0; $j < $cols; $j++) {
+            $tableHTML .= "<td>Cellule</td>\n";
+        }
+        $tableHTML .= "</tr>\n";
+    }
+    $tableHTML .= "</table>\n";
+}
+?>
 </body>
 </html>
