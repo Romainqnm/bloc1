@@ -4,7 +4,7 @@ body {
     color: #2c3e50;
     margin: 20px;
     position: relative;
-    overflow: hidden;
+    overflow: auto; /* Correction pour permettre le défilement */
 }
 
 h1 {
@@ -19,36 +19,12 @@ h1 {
     animation: titleAnimation 1.5s infinite;
 }
 
-h2 {
-    color: #4b0082;
-    font-size: 1.8em;
-    margin-bottom: 15px;
-}
-
-ul {
-    background-color: #e6ccff;
-    border: 1px solid #c0a1d6;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-}
-
-li {
-    margin: 10px 0;
-}
-
-a {
-    text-decoration: none;
-    color: #4b0082;
-    font-weight: bold;
-}
-
-a:hover {
-    color: #800080;
-}
-
 .td-container {
     margin-bottom: 40px;
+    padding: 15px; /* Ajout d'espacement pour éviter les débordements */
+    border: 1px solid #c0a1d6;
+    border-radius: 10px;
+    background-color: #e6ccff;
 }
 
 .ball {
@@ -56,12 +32,13 @@ a:hover {
     height: 50px;
     background-color: #800080;
     border-radius: 50%;
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: fixed; /* Pour éviter que la balle dépasse des limites */
+    top: 10px;
+    left: 10px;
 }
 
 @keyframes titleAnimation {
     0% { transform: scale(1); }
     50% { transform: scale(1.01); }
     100% { transform: scale(1); }
+}
