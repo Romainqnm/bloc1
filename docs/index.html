@@ -73,8 +73,8 @@
         const ball = document.getElementById('ball');
         let xPos = 0;
         let yPos = 0;
-        let xSpeed = 1000;
-        let ySpeed = 1000;
+        let xSpeed = 100;
+        let ySpeed = 100;
         const width = window.innerWidth - 50;
         const height = window.innerHeight - 50;
 
@@ -97,5 +97,62 @@
 
         moveBall();
     </script>
+
+<script>
+    const ball = document.getElementById('ball');
+    let xPos = 1000;
+    let yPos = 1000;
+    let xSpeed = 50;
+    let ySpeed = 50;
+    const width = window.innerWidth - 50;
+    const height = window.innerHeight - 50;
+
+    function moveBall() {
+        xPos += xSpeed;
+        yPos += ySpeed;
+
+        if (xPos >= width || xPos <= 0) {
+            xSpeed = -xSpeed;
+        }
+        if (yPos >= height || yPos <= 0) {
+            ySpeed = -ySpeed;
+        }
+
+        ball.style.left = xPos + 'px';
+        ball.style.top = yPos + 'px';
+
+        requestAnimationFrame(moveBall);
+    }
+
+    moveBall();
+</script>
+<script>
+    const ball = document.getElementById('ball');
+    let xPos = 100;
+    let yPos = 100;
+    let xSpeed = 25;
+    let ySpeed = 25;
+    const width = window.innerWidth - 50;
+    const height = window.innerHeight - 50;
+
+    function moveBall() {
+        xPos += xSpeed;
+        yPos += ySpeed;
+
+        if (xPos >= width || xPos <= 0) {
+            xSpeed = -xSpeed;
+        }
+        if (yPos >= height || yPos <= 0) {
+            ySpeed = -ySpeed;
+        }
+
+        ball.style.left = xPos + 'px';
+        ball.style.top = yPos + 'px';
+
+        requestAnimationFrame(moveBall);
+    }
+
+    moveBall();
+</script>
 </body>
 </html>
