@@ -1,1 +1,1 @@
-# Repository SLAM - BLOC 1 - TDs
+> ⚠️ Projet pédagogique (BTS SIO) - Archive d'apprentissage. Certaines fonctionnalités peuvent être incomplètes.
